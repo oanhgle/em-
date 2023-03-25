@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0666E6E29CE47AA002FAFFB /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0666E6D29CE47AA002FAFFB /* NoteView.swift */; };
+		C0666E7629CE5494002FAFFB /* Bauziet-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0666E7229CE5266002FAFFB /* Bauziet-Regular.ttf */; };
 		C07EB5BE29C97B3600552C82 /* em_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07EB5BD29C97B3600552C82 /* em_App.swift */; };
 		C07EB5C029C97B3600552C82 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07EB5BF29C97B3600552C82 /* ContentView.swift */; };
 		C07EB5C229C97B3800552C82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C07EB5C129C97B3800552C82 /* Assets.xcassets */; };
@@ -15,9 +17,15 @@
 		C07EB5E329C9D3EA00552C82 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07EB5E229C9D3EA00552C82 /* CustomTabBar.swift */; };
 		C07EB5E729C9EED200552C82 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07EB5E629C9EED200552C82 /* MapView.swift */; };
 		C07EB5E929C9EEE100552C82 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07EB5E829C9EEE100552C82 /* ProfileView.swift */; };
+		C0F32B8329CECF8700777FF4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F32B8229CECF8700777FF4 /* Location.swift */; };
+		C0F32B8529CED14600777FF4 /* CurrentLocation.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0F32B8429CED14600777FF4 /* CurrentLocation.plist */; };
+		C0F32B8929CEDEDC00777FF4 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F32B8829CEDEDC00777FF4 /* ExploreView.swift */; };
+		C0F32B8B29CEDFC200777FF4 /* FriendFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F32B8A29CEDFC200777FF4 /* FriendFeedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C0666E6D29CE47AA002FAFFB /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
+		C0666E7229CE5266002FAFFB /* Bauziet-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bauziet-Regular.ttf"; sourceTree = "<group>"; };
 		C07EB5BA29C97B3600552C82 /* em-.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "em-.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C07EB5BD29C97B3600552C82 /* em_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = em_App.swift; sourceTree = "<group>"; };
 		C07EB5BF29C97B3600552C82 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -28,6 +36,10 @@
 		C07EB5E229C9D3EA00552C82 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		C07EB5E629C9EED200552C82 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		C07EB5E829C9EEE100552C82 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		C0F32B8229CECF8700777FF4 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		C0F32B8429CED14600777FF4 /* CurrentLocation.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CurrentLocation.plist; sourceTree = "<group>"; };
+		C0F32B8829CEDEDC00777FF4 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		C0F32B8A29CEDFC200777FF4 /* FriendFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendFeedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C0666E6F29CE50B9002FAFFB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C0666E7229CE5266002FAFFB /* Bauziet-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		C07EB5B129C97B3600552C82 = {
 			isa = PBXGroup;
 			children = (
@@ -60,12 +80,15 @@
 		C07EB5BC29C97B3600552C82 /* em- */ = {
 			isa = PBXGroup;
 			children = (
+				C0F32B7B29CEC27100777FF4 /* Models */,
+				C0666E6F29CE50B9002FAFFB /* Fonts */,
 				C07EB5DD29C9D2BE00552C82 /* Views */,
 				C07EB5BD29C97B3600552C82 /* em_App.swift */,
 				C07EB5BF29C97B3600552C82 /* ContentView.swift */,
 				C07EB5C129C97B3800552C82 /* Assets.xcassets */,
 				C07EB5C629C97B3800552C82 /* em_.entitlements */,
 				C07EB5C329C97B3800552C82 /* Preview Content */,
+				C0F32B8429CED14600777FF4 /* CurrentLocation.plist */,
 			);
 			path = "em-";
 			sourceTree = "<group>";
@@ -85,8 +108,19 @@
 				C07EB5E229C9D3EA00552C82 /* CustomTabBar.swift */,
 				C07EB5E629C9EED200552C82 /* MapView.swift */,
 				C07EB5E829C9EEE100552C82 /* ProfileView.swift */,
+				C0666E6D29CE47AA002FAFFB /* NoteView.swift */,
+				C0F32B8829CEDEDC00777FF4 /* ExploreView.swift */,
+				C0F32B8A29CEDFC200777FF4 /* FriendFeedView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C0F32B7B29CEC27100777FF4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C0F32B8229CECF8700777FF4 /* Location.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +187,8 @@
 			files = (
 				C07EB5C529C97B3800552C82 /* Preview Assets.xcassets in Resources */,
 				C07EB5C229C97B3800552C82 /* Assets.xcassets in Resources */,
+				C0666E7629CE5494002FAFFB /* Bauziet-Regular.ttf in Resources */,
+				C0F32B8529CED14600777FF4 /* CurrentLocation.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,10 +200,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C07EB5E329C9D3EA00552C82 /* CustomTabBar.swift in Sources */,
+				C0F32B8929CEDEDC00777FF4 /* ExploreView.swift in Sources */,
 				C07EB5C029C97B3600552C82 /* ContentView.swift in Sources */,
 				C07EB5E729C9EED200552C82 /* MapView.swift in Sources */,
+				C0F32B8329CECF8700777FF4 /* Location.swift in Sources */,
 				C07EB5E129C9D31400552C82 /* Home.swift in Sources */,
+				C0F32B8B29CEDFC200777FF4 /* FriendFeedView.swift in Sources */,
 				C07EB5E929C9EEE100552C82 /* ProfileView.swift in Sources */,
+				C0666E6E29CE47AA002FAFFB /* NoteView.swift in Sources */,
 				C07EB5BE29C97B3600552C82 /* em_App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,7 +342,10 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "em-/Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -335,7 +378,10 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "em-/Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

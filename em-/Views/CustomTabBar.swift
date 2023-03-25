@@ -10,12 +10,16 @@ struct CustomTabBar: View {
     @Binding var selectedTab: String
     // Animation namespace for sliding effect
     @Namespace var animation
+    @State var showNoteView = false
     var body: some View {
         HStack(spacing: 0) {
             // Tab Bar Button
             TabBarButton(animation: animation, image: "house", selectedTab: $selectedTab)
             TabBarButton(animation: animation, image: "heart", selectedTab: $selectedTab)
-            Button(action: {}, label: {
+            
+            Button(action: {
+                self.showNoteView.toggle()
+            }, label: {
                 Image(systemName: "pencil")
                     .resizable()
                     .renderingMode(.template)
@@ -30,6 +34,7 @@ struct CustomTabBar: View {
                     .shadow(color: Color.black.opacity(0.05), radius: 5, x: -5, y: -5)
             })
             .offset(y: -30)
+            .fullScreenCover(isPresented: $showNoteView, content: NoteView.init)
 
             TabBarButton(animation: animation, image: "map", selectedTab: $selectedTab)
             TabBarButton(animation: animation, image: "person", selectedTab: $selectedTab)
@@ -51,7 +56,7 @@ extension View {
         UIApplication.shared.windows.first?.safeAreaInsets ?? .zero
     }
 }
-
+ 
 struct TabBarButton: View {
     var animation: Namespace.ID
     var image: String

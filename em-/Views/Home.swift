@@ -7,6 +7,7 @@
 
 import SwiftUI
 struct Home: View {
+    
     // Hiding tab bar
     init() {
         UITabBar.appearance().isHidden = true
@@ -16,11 +17,11 @@ struct Home: View {
         ZStack(alignment: .bottom) {
             // Tab view
             TabView(selection: $selectedTab) {
-                ProfileView()
+                ExploreView()
                     .tag("house")
-                MapView()
+                FriendFeedView()
                     .tag("heart")
-                MapView()
+                MapView().ignoresSafeArea()
                     .tag("map")
                 ProfileView()
                     .tag("person")
