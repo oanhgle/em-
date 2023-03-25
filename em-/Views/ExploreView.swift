@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct ExploreView: View {
+    @State var events = [Event]()
     var body: some View {
         Text("Explore")
+            .padding()
+            .onAppear() {
+                Api().loadData { (events) in
+                    self.events = events
+                }
+            }
     }
 }
 
