@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct FriendFeedView: View {
+    var posts : [Journal]
     var body: some View {
-        Text("Feed View")
+        ScrollView{
+            VStack(){
+                VStack(spacing: 25) {
+                    VStack(spacing: 20) {
+                        ForEach(posts) {
+                            post in PostView(post: post)
+                            Divider().frame(maxWidth: 300) 
+                        }
+                    }
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.top)
+                .padding(.horizontal)
+            }
+        }
     }
 }
 

@@ -5,9 +5,12 @@
 //  Created by Oanh Le on 3/21/23.
 //
 import SwiftUI
+import MapKit
+import CoreLocation
 
 struct CustomTabBar: View {
     @Binding var selectedTab: String
+    var currentLocation: CLLocation!
     // Animation namespace for sliding effect
     @Namespace var animation
     @State var showNoteView = false
@@ -34,7 +37,8 @@ struct CustomTabBar: View {
                     .shadow(color: Color.black.opacity(0.05), radius: 5, x: -5, y: -5)
             })
             .offset(y: -30)
-            .fullScreenCover(isPresented: $showNoteView, content: NoteView.init)
+            .fullScreenCover(isPresented: $showNoteView){ NoteView(currentLocation: currentLocation)
+            }
 
             TabBarButton(animation: animation, image: "map", selectedTab: $selectedTab)
             TabBarButton(animation: animation, image: "person", selectedTab: $selectedTab)

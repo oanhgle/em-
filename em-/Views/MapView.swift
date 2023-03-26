@@ -9,62 +9,64 @@ import SwiftUI
 import MapKit
 import CoreLocation
 
-let region = Location(filename: "CurrentLocation")
 let mapView = MKMapView(frame: UIScreen.main.bounds)
 
 struct MapView: UIViewRepresentable {
+    var currentLocation: CLLocation!
+    var posts : [Journal]
     func makeUIView(context: Context) -> MKMapView {
-            let latDelta = region.overlayTopLeftCoordinate.latitude - region.overlayBottomRightCoordinate.latitude
-            
-            let span = MKCoordinateSpan(latitudeDelta: fabs(latDelta), longitudeDelta: 0.0)
-            let region = MKCoordinateRegion(center: region.midCoordinate, span: span)
-            
-            mapView.region = region
-            mapView.delegate = context.coordinator
-            
-            return mapView
-        }
         
-        func updateUIView(_ uiView: MKMapView, context: Context) {
+        /* get user's current location */
+//        let coordinate = CLLocationCoordinate2D(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
+        let coordinate = CLLocationCoordinate2D(latitude: 28.05878, longitude: -82.41531)
+        let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 200, longitudinalMeters: 200)
+        mapView.region = region
+        mapView.delegate = context.coordinator
+         
+        /* display emojis */
+        for item in posts {
+            mapView.addAnnotation(EmoAnnotation(coordinate: CLLocationCoordinate2D(latitude: item.latitude, longitude: item.longtitude), title: item.title, subtitle: "annonymous", emotion: item.sentiment))
+            
         }
+//        let annotation = EmoAnnotation(coordinate: CLLocationCoordinate2D(latitude: 28.05878, longitude: -82.41531), title: "hey", subtitle: "hihi", type: Emoji.joy)
+//        mapView.addAnnotation(annotation)
         
-        class Coordinator: NSObject, MKMapViewDelegate {
-            var parent: MapView
-            
-            init(_ parent: MapView) {
-                self.parent = parent
-            }
-            
-            func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-                if overlay is MKPolyline {
-                    let lineView = MKPolylineRenderer(overlay: overlay)
-                    lineView.strokeColor = .green
-                    return lineView
-                } else if overlay is MKPolygon {
-                    let polygonView = MKPolygonRenderer(overlay: overlay)
-                    polygonView.strokeColor = .magenta
-                    return polygonView
-                }
-//                else if let character = overlay as? Character {
-//                    let circleView = MKCircleRenderer(overlay: character)
-//                    circleView.strokeColor = character.color
-//                    return circleView
-//                }
-                
-                return MKOverlayRenderer()
-            }
-            
-//            func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//                let annotationView = AttractionAnnotationView(annotation: annotation, reuseIdentifier: "Attraction")
-//                annotationView.canShowCallout = true
-//                return annotationView
-//            }
-        }
-        
-        func makeCoordinator() -> Coordinator {
-            Coordinator(self)
-        }
+        return mapView
+    }
     
+    func updateUIView(_ uiView: MKMapView, context: Context) {
+            mapView.showsUserLocation = true
+            mapView.userTrackingMode = .follow
+    }
+    func makeCoordinator() -> MapView.Coordinator {
+        return Coordinator(self)
+    }
+
+    class Coordinator: NSObject, MKMapViewDelegate {
+        var parent: MapView
+        
+        init(_ parent: MapView) {
+            self.parent = parent
+        }
+        func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+            if overlay is MKPolyline {
+                let lineView = MKPolylineRenderer(overlay: overlay)
+                lineView.strokeColor = .green
+                return lineView
+            } else if overlay is MKPolygon {
+                let polygonView = MKPolygonRenderer(overlay: overlay)
+                polygonView.strokeColor = .magenta
+                return polygonView
+            }
+            return MKOverlayRenderer()
+        }
+        
+        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+            let annotationView = EmoAnnotationView(annotation: annotation, reuseIdentifier: "EmoAnnotation")
+            annotationView.canShowCallout = true
+            return annotationView
+        }
+    }
 }
 
 struct MapView_Previews: PreviewProvider {
