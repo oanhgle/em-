@@ -28,16 +28,15 @@ The front end of the app is built with Swift. We utilize SwiftUI for most of the
 
 To connect backend to the frontend, we create rest APIs with Flask-SQLAlchemy and call the API endpoints through HTTP request in Swift. 
 
-We also use NLP to classify the user's emotional situation through journaling...
+We also use NLP to classify the user's emotional situation through journaling... // fixme
 
 ## 😭 Challenges we ran into
 
-This is our first time intereacting with blockchain technology to develop a mobile app. We ran into some difficults when trying to create and send tokens with Solana. We also ran into challenges where we connect front end to backend. Though some of us are familiar with Flask and Swift, we never try to combine them before. Our two backend developers also have 2 backend file that are not really compatible. We were not able to merge them due to time constraints, but we figured out the solution by running two ports at the same time.
+This is our first time interacting with blockchain technology to develop a mobile app. We ran into some difficulties trying to create and send tokens with Solana. We also ran into challenges where we connect front end to backend. Though some of us are familiar with Flask and Swift, we never try to combine them before. Our two backend developers also have two separate backend files that are not really compatible. We were not able to merge them due to the time constraint, but we figured out the solution to run the demo by running two ports at the same time.
 
 ## 📌 Accomplishment
 
-We learn a tons of new technology
-We're proud to create a solution that help strengthen the USF community
+By utilizing the current modern technologies such as Solana, Swift, Flask, SQLAlchemy, and NLP, we are proud to create a solution that helps strengthen the USF community
 
 ## 📝 Roadmap
 Future implementation
