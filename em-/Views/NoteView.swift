@@ -12,9 +12,9 @@ import CoreLocation
 struct NoteView: View {
     @Environment(\.dismiss) var dismiss
     var currentLocation: CLLocation!
+    @State var journals = [Journal]()
     @State var reply: String = ""
     @State var reply2: String = ""
-    @State var journal_id: String = ""
     @State var sentiment: String = ""
     @State var presentPopup = false
     @State private var privateSession = true
@@ -102,18 +102,16 @@ struct NoteView: View {
                 Button {
                     // action
                     if (!reply.isEmpty && !reply2.isEmpty) {
-//                        let latitude = "\(currentLocation.coordinate.latitude)"
-//                        let longitude = "\(currentLocation.coordinate.longitude)"
+    //                        let latitude = "\(currentLocation.coordinate.latitude)"
+    //                        let longitude = "\(currentLocation.coordinate.longitude)"
                         let latitude = "28.05878"
                         let longitude = "-82.41531"
-                        print(latitude)
-                        let timestamp = Date()
-                        let formatter = DateFormatter()
-                        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-                        let posted_time = formatter.string(from: timestamp)
-//                        let journal = Journal(journal_id:UUID().uuidString, user_id:"532130b1-e064-48ad-838c-7409d6a42970", title: reply, journal: reply2)
-//                        Api().createJournal(journal: journal)
-//                        self.journal_id = journal.journal_id
+                        let journal = Journal(journal_id:UUID().uuidString, user_id:UserInSession.id, title: reply, journal: reply2, sentiment: "", posted_time: "", latitude: latitude, longitude: longitude)
+                        API().createJournal(journal: journal)
+                        API().getJournal(journal_id: journal.journal_id, completion: { (pred) in
+                            self.journals = pred
+                            self.sentiment = journals[0].sentiment
+                        })
                         // Create effect after this
                         presentPopup = true
                     } else {

@@ -10,7 +10,7 @@ import CoreLocation
 
 struct Home: View {
     @StateObject var locationManager = LocationManager()
-    @State var posts: [Journal] = [
+    /*@State var posts: [Journal] = [
         Journal(id: 10, journal_id: "J0", user_id: "Coco", title: "Attending Hackabull", journal: "It is so fun here", sentiment: "joy", latitude: 28.05945, longtitude: -82.41482),
         Journal(id: 20,    journal_id: "a798e15",
                 user_id: "Oanh",
@@ -38,8 +38,8 @@ struct Home: View {
                     sentiment: "sadness",
                 latitude: 28.05903, longtitude: -28.05945),
     
-    ]
-    
+    ]*/
+    @State var posts: [Journal] = []
     // Hiding tab bar
     init() {
         UITabBar.appearance().isHidden = true
@@ -68,7 +68,11 @@ struct Home: View {
             CustomTabBar(selectedTab: $selectedTab, currentLocation: locationManager.lastLocation) 
         }
         .ignoresSafeArea()
-        
+        .onAppear {
+            API().getJournalForMap(completion: {(journals) in
+                self.posts = journals
+            })
+        }
     }
 }
 

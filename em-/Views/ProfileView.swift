@@ -80,7 +80,7 @@ struct ProfileView: View {
                                 .font(.custom("Bauziet-", size: 15))
                                 .padding(.top, 20)
                                 .foregroundColor(.gray)
-                            Text("\(current_balance) $BULLCOINS$")
+                            Text("\(current_balance) $BULLCOIN$")
                                 .font(.custom("Bauziet", size: 16))
                                 .padding(.top,0)
                         }

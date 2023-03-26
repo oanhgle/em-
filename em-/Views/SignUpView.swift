@@ -42,7 +42,7 @@ struct SignUpView: View {
     var settingButtons: some View
     {
         VStack() {
-            Text("EM-")
+            Text("em-net")
                 .font(.custom("Bauziet", size: 30))
                 .padding([.top, .bottom], 40)
             
@@ -62,7 +62,8 @@ struct SignUpView: View {
             
             Button(action: {
                 self.signUpSuccess = UserManager().createUser(email:email, name:name, password: password){
-                    name in UserInSession.name = name
+                    name, id in UserInSession.name = name; UserInSession.id = id
+                    
                 }  
                 
             }) {

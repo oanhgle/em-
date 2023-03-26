@@ -9,7 +9,11 @@ import SwiftUI
 
 struct PostView: View {
     var post: Journal
+    @State var users = [User]()
+    @State var user_name: String = ""
+    
     @State var colorCircle: [Color] = [.red.opacity(0.4), .green.opacity(0.4), .purple.opacity(0.4), .blue.opacity(0.4)]
+    
     var body: some View {
         VStack(alignment:.leading){
             HStack(){
@@ -26,7 +30,7 @@ struct PostView: View {
                         .foregroundColor(.white)
                         .offset(x:4))
                 VStack(alignment:.leading){
-                    Text(post.user_id)
+                    Text("Anonymous")
                         .font(Font.custom("Bauziet", size: 20))
                     
                     Text(post.title)
@@ -49,6 +53,11 @@ struct PostView: View {
             .padding(.horizontal)
         }
         .padding(.top, 5)
+//        .onAppear {
+//            API().getUserName(user_id: post.user_id) { user_name in
+//                self.user_name = user_name
+//            }
+//        }
     }
 }
 extension CGFloat {

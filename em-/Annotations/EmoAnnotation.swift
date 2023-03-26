@@ -15,7 +15,7 @@ enum Emoji: Int {
     case neutral
     case anger
     case sadness
-    case suprise
+    case surprise
     func image() -> UIImage {
         switch self {
         case .joy:
@@ -28,8 +28,8 @@ enum Emoji: Int {
             return UIImage(imageLiteralResourceName: "anger").resizeImageTo(size: CGSize(width: 48, height: 48))!
         case .sadness:
             return UIImage(imageLiteralResourceName: "sadness").resizeImageTo(size: CGSize(width: 48, height: 48))!
-        case .suprise:
-            return UIImage(imageLiteralResourceName: "suprise").resizeImageTo(size: CGSize(width: 48, height: 48))!
+        case .surprise:
+            return UIImage(imageLiteralResourceName: "surprise").resizeImageTo(size: CGSize(width: 48, height: 48))!
         case .neutral:
             return UIImage(imageLiteralResourceName: "neutral").resizeImageTo(size: CGSize(width: 48, height: 48))!
         }
@@ -63,8 +63,8 @@ class EmoAnnotation: NSObject, MKAnnotation {
                 self.type = Emoji.anger
             case "sadness":
                 self.type = Emoji.sadness
-            case "suprise":
-                self.type = Emoji.suprise
+            case "surprise":
+                self.type = Emoji.surprise
             case "neutral":
                 self.type = Emoji.neutral
             default:

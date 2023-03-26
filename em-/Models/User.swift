@@ -15,7 +15,7 @@ class UserManager:ObservableObject{
     @Published var publicKey: String = ""
     @Published var privateKey: String = ""
     
-    func createUser (email: String, name:String, password:String,completion: @escaping (String)->Void)-> Bool {
+    func createUser (email: String, name:String, password:String,completion: @escaping (String, String)->Void)-> Bool {
         
         var successSignIn = true
         // Generate public Key
@@ -52,15 +52,17 @@ class UserManager:ObservableObject{
                     if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
 //                      print(json)
                         guard let user = json["user"] as? [String:Any],
-                              let name = user["name"]
+                              let name = user["name"],
+                              let id = user["id"]
                         else {
                             return
                         }
                         semaphore.signal()
 //                        ret = id as! String
                         self.name = name as! String
+                        self.id = id as! String
 //                        print("RET", ret)
-                        completion(self.name)
+                        completion(self.name, self.id)
                     }
                 } catch let error as NSError {
                     print("Failed to load: \(error.localizedDescription)")
@@ -73,7 +75,7 @@ class UserManager:ObservableObject{
         return successSignIn
     }
      
-    func loginUser(email:String, password:String, completion: @escaping (String)->Void) -> Bool{
+    func loginUser(email:String, password:String, completion: @escaping (String, String)->Void) -> Bool{
         // hardcode error :)
         let error401 : String = "<!doctype html>\n<html lang=en>\n<title>401 Unauthorized</title>\n<h1>Unauthorized</h1>\n<p>The server could not verify that you are authorized to access the URL requested. You either supplied the wrong credentials (e.g. a bad password), or your browser doesn&#39;t understand how to supply the credentials required.</p>\n"
 
@@ -104,15 +106,17 @@ class UserManager:ObservableObject{
                     if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
 //                      print(json)
                         guard let user = json["user"] as? [String:Any],
-                              let name = user["name"]
+                              let name = user["name"],
+                              let id = user["id"]
                         else {
                             return
                         }
                         semaphore.signal()
 //                        ret = id as! String
                         self.name = name as! String
+                        self.id = id as! String
 //                        print("RET", ret)
-                        completion(self.name)
+                        completion(self.name, self.id)
                     }
                 } catch let error as NSError {
                     print("Failed to load: \(error.localizedDescription)")
@@ -124,5 +128,11 @@ class UserManager:ObservableObject{
         return (successLogin)
     }
     
+}
+
+struct User: Hashable, Codable, Identifiable {
+    var id: String { user_id }
+    let user_id: String
+    let name: String
 }
 

@@ -9,14 +9,14 @@ import UIKit
 import Foundation
 import CoreLocation
 
-struct Journal: Hashable, Identifiable {
-    var id: Int
+struct Journal: Hashable, Codable, Identifiable {
+    var id: String { journal_id }
     let journal_id: String
     let user_id: String
     let title: String
     let journal: String
     var sentiment: String=""
-    var latitude: CLLocationDegrees
-    var longtitude: CLLocationDegrees
-    
+    var posted_time: String=""
+    let latitude: String
+    let longitude: String
 }

@@ -25,8 +25,8 @@ struct MapView: UIViewRepresentable {
          
         /* display emojis */
         for item in posts {
-            mapView.addAnnotation(EmoAnnotation(coordinate: CLLocationCoordinate2D(latitude: item.latitude, longitude: item.longtitude), title: item.title, subtitle: "annonymous", emotion: item.sentiment))
-            
+            mapView.addAnnotation(EmoAnnotation(coordinate: CLLocationCoordinate2D(latitude: Double(item.latitude) ?? 28.05878, longitude: Double(item.longitude) ?? -82.41531), title: item.title, subtitle: "anonymous", emotion: item.sentiment))
+                        
         }
 //        let annotation = EmoAnnotation(coordinate: CLLocationCoordinate2D(latitude: 28.05878, longitude: -82.41531), title: "hey", subtitle: "hihi", type: Emoji.joy)
 //        mapView.addAnnotation(annotation)

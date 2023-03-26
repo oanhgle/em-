@@ -13,6 +13,7 @@ struct UserInSession{
     static var name = ""
     static var privateKey = ""
     static var secretKey = ""
+    static var id = ""
 }
 struct LogInView_Previews: PreviewProvider {
     static var previews: some View {
@@ -45,7 +46,7 @@ struct LogInView: View {
     
     var settingButtons : some View {
         VStack() {
-            Text("EM-")
+            Text("em-net")
                 .font(.custom("Bauziet", size: 30))
                 .padding([.top, .bottom], 40)
             
@@ -60,8 +61,9 @@ struct LogInView: View {
             
             Button(action: {
                 self.LogInSuccess = UserManager().loginUser(email:email, password: password){
-                    name in
-                    UserInSession.name = name
+                    name, id in
+                    UserInSession.name = name;
+                    UserInSession.id = id
                 }
                     
             }){
