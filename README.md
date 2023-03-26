@@ -42,5 +42,8 @@ This is our first time interacting with blockchain technology to develop a nativ
 By utilizing the current modern technologies such as Solana, Swift, Flask, SQLAlchemy, and NLP, we are proud to create a solution that helps strengthen the USF community
 
 ## 📝 Roadmap
-Future implementation
+Some future implementations include:
+- Generate smart recommendations to recommend users their potential favorite events and mental health resources based on their journaling history
+- Deploy the app on Android
+- Letting users earn tokens with a peer support system
 
