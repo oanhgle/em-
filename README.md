@@ -4,8 +4,6 @@ The Web 3.0
 Em-
 Using Solana blockchain, em- is a tokenized network that aims to create a Bull community by rewarding users with an active stake in itself per $BULLCOIN$.
 
-
-
 # What it does
 
 Feel closer to yourself and the community around you with Em-. This iOS app utilizes cutting-edge blockchain technology to rewards users for their engagement in USF campus events and their commitment to personal growth through writing journals. 
@@ -44,7 +42,7 @@ We learn a tons of new technology
 We're proud to create a solution that help strengthen the USF community
 
 # Roadmap
-
+Future implementation
 
 
 
