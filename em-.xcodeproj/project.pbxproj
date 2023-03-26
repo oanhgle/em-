@@ -29,6 +29,10 @@
 		C0F32BA529CFEEC000777FF4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F32BA429CFEEC000777FF4 /* API.swift */; };
 		C0F32BA929D00A1A00777FF4 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F32BA829D00A1A00777FF4 /* Journal.swift */; };
 		C0F32BAB29D022CE00777FF4 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F32BAA29D022CE00777FF4 /* PostView.swift */; };
+		D69C044729D04D7300726ABE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69C044629D04D7300726ABE /* User.swift */; };
+		D69C044929D051FB00726ABE /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69C044829D051FB00726ABE /* SignUpView.swift */; };
+		D69C044B29D0521600726ABE /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69C044A29D0521600726ABE /* LogInView.swift */; };
+		D69C044E29D052A700726ABE /* Solana in Frameworks */ = {isa = PBXBuildFile; productRef = D69C044D29D052A700726ABE /* Solana */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +60,9 @@
 		C0F32BA429CFEEC000777FF4 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		C0F32BA829D00A1A00777FF4 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 		C0F32BAA29D022CE00777FF4 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		D69C044629D04D7300726ABE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D69C044829D051FB00726ABE /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		D69C044A29D0521600726ABE /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D69C044E29D052A700726ABE /* Solana in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +109,6 @@
 				C0666E6F29CE50B9002FAFFB /* Fonts */,
 				C07EB5DD29C9D2BE00552C82 /* Views */,
 				C07EB5BD29C97B3600552C82 /* em_App.swift */,
-				E806D5D829CF88E0005BADC9 /* models.swift */,
 				C07EB5BF29C97B3600552C82 /* ContentView.swift */,
 				C07EB5C129C97B3800552C82 /* Assets.xcassets */,
 				C07EB5C629C97B3800552C82 /* em_.entitlements */,
@@ -131,6 +138,8 @@
 				C0F32B8A29CEDFC200777FF4 /* FriendFeedView.swift */,
 				C0F32B9029CF7C8900777FF4 /* EventItem.swift */,
 				C0F32BAA29D022CE00777FF4 /* PostView.swift */,
+				D69C044829D051FB00726ABE /* SignUpView.swift */,
+				D69C044A29D0521600726ABE /* LogInView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -143,6 +152,7 @@
 				C0F32B9629CFB4F300777FF4 /* LocationManager.swift */,
 				C0F32BA429CFEEC000777FF4 /* API.swift */,
 				C0F32BA829D00A1A00777FF4 /* Journal.swift */,
+				D69C044629D04D7300726ABE /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -173,6 +183,7 @@
 			);
 			name = "em-";
 			packageProductDependencies = (
+				D69C044D29D052A700726ABE /* Solana */,
 			);
 			productName = "em-";
 			productReference = C07EB5BA29C97B3600552C82 /* em-.app */;
@@ -203,6 +214,7 @@
 			);
 			mainGroup = C07EB5B129C97B3600552C82;
 			packageReferences = (
+				D69C044C29D052A700726ABE /* XCRemoteSwiftPackageReference "Solana" */,
 			);
 			productRefGroup = C07EB5BB29C97B3600552C82 /* Products */;
 			projectDirPath = "";
@@ -247,9 +259,12 @@
 				C0F32B9729CFB4F300777FF4 /* LocationManager.swift in Sources */,
 				C07EB5BE29C97B3600552C82 /* em_App.swift in Sources */,
 				C0F32B9129CF7C8900777FF4 /* EventItem.swift in Sources */,
+				D69C044B29D0521600726ABE /* LogInView.swift in Sources */,
 				C0F32BA529CFEEC000777FF4 /* API.swift in Sources */,
+				D69C044929D051FB00726ABE /* SignUpView.swift in Sources */,
 				C0F32BAB29D022CE00777FF4 /* PostView.swift in Sources */,
 				C0F32B9329CF7CEB00777FF4 /* Event.swift in Sources */,
+				D69C044729D04D7300726ABE /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +478,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D69C044C29D052A700726ABE /* XCRemoteSwiftPackageReference "Solana" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/metaplex-foundation/Solana.Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D69C044D29D052A700726ABE /* Solana */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D69C044C29D052A700726ABE /* XCRemoteSwiftPackageReference "Solana" */;
+			productName = Solana;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C07EB5B229C97B3600552C82 /* Project object */;
 }

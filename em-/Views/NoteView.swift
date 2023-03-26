@@ -17,7 +17,7 @@ struct NoteView: View {
     @State var journal_id: String = ""
     @State var sentiment: String = ""
     @State var presentPopup = false
-    
+    @State private var privateSession = true
     var body: some View {
         VStack (alignment: .leading) {
             HStack() {
@@ -37,6 +37,13 @@ struct NoteView: View {
             HStack() {
                 Image("pfp").resizable()
                     .frame(width: 100.0, height: 100.0)
+                VStack {
+                   Toggle("", isOn: $privateSession)
+                       .toggleStyle(SwitchToggleStyle(tint: .red))
+                   if privateSession {
+                       // do sthing here
+                   }
+                }
             }
             .padding(.top, 20)
             .padding(.horizontal)
