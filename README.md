@@ -46,4 +46,3 @@ Some future implementations include:
 - Generate smart recommendations to recommend users their potential favorite events and mental health resources based on their journaling history
 - Deploy the app on Android
 - Letting users earn tokens with a peer support system
-
