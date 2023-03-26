@@ -9,11 +9,22 @@ import SwiftUI
 
 struct PostView: View {
     var post: Journal
+    @State var colorCircle: [Color] = [.red.opacity(0.4), .green.opacity(0.4), .purple.opacity(0.4), .blue.opacity(0.4)]
     var body: some View {
         VStack(alignment:.leading){
             HStack(){
-                Image("pfp").resizable()
-                    .frame(width: 80.0, height: 80.0)
+                Circle()
+                    .fill(colorCircle.randomElement()!)
+                    .frame(width: 60.0, height: 50.0)
+                    .padding(5)
+                    .offset(x:4)
+                    .overlay(Image(systemName: "person")
+                        .resizable()
+                        .renderingMode(.template)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 25, height: 25)
+                        .foregroundColor(.white)
+                        .offset(x:4))
                 VStack(alignment:.leading){
                     Text(post.user_id)
                         .font(Font.custom("Bauziet", size: 20))
@@ -40,7 +51,21 @@ struct PostView: View {
         .padding(.top, 5)
     }
 }
-
+extension CGFloat {
+    static func random() -> CGFloat {
+        return CGFloat(arc4random()) / CGFloat(UInt32.max)
+    }
+}
+extension UIColor {
+    static func random() -> UIColor {
+        return UIColor(
+           red:   .random(),
+           green: .random(),
+           blue:  .random(),
+           alpha: 1.0
+        )
+    }
+}
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
         Home()

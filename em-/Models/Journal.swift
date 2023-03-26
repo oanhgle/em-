@@ -18,4 +18,5 @@ struct Journal: Hashable, Identifiable {
     var sentiment: String=""
     var latitude: CLLocationDegrees
     var longtitude: CLLocationDegrees
+    
 }
