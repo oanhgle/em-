@@ -1,3 +1,6 @@
+# Backend for this repo
+https://github.com/yenhle/em-backend
+
 # Emnet
 
 Using Solana blockchain, Emnet is a tokenized network that aims to create a Bull community by rewarding users with an active stake in itself per `$BULLCOIN$`.
