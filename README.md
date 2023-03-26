@@ -8,11 +8,11 @@ Feel closer to yourself and the community around you with Emnet. This iOS app ut
 
 ### Connecting with the community
 
-Self-care isn't enough. We need community care to thrive. Our goal is to create a space where people can take ownership of their efforts to strengthen communities. A community contribution can take many forms; it can be as simple as attending an event on campus to share your vision, goals, or skills with others. With Emnet, users can see what events are taking place on USF campus and earn `$BULLCOIN$` for attending them. Users will be able to redeem `$BULLCOIN$` for a variety of exciting rewards, such as discounts on goods and services on USF's campus.
+Self-care isn't enough. We need community care to thrive. Our goal is to create a space where people can take ownership of their efforts to strengthen communities. A community contribution can take many forms; it can be as simple as attending an event on campus to share your vision, goals, or skills with others. With Emnet, users can see what events are taking place on USF campus and earn `$BULLCOIN$` for attending them. Users will be able to redeem `$BULLCOIN$` for a variety of exciting rewards, such as discounts on goods and services on USF's campus. Users can also trade tokens with each other.
 
 ### Connecting with yourself through journaling
 
-In addition to taking ownership of building the community, we want users to feel appreciated for taking care of their own mental health. Studies have also shown that journaling can reduce the frequency of intrusive, depressive thoughts, help college students who are vulnerable to depression, and reduce overall levels of depression in those diagnosed with a Major Depressive Disorder.  With Emnet, users can maximize the benefit of self-reflection through journaling and gain `$BULLCOIN$`.
+In addition to taking ownership of building the community, we want users to feel appreciated for taking care of their own mental health. Studies have shown that journaling can reduce the frequency of intrusive, depressive thoughts, help college students who are vulnerable to depression, and reduce overall levels of depression in those diagnosed with a Major Depressive Disorder.  With Emnet, users can maximize the benefit of self-reflection through journaling and gain `$BULLCOIN$`.
 
 ### Interactive Map
 
@@ -32,7 +32,7 @@ We also use NLP to classify the user's emotional situation through journaling...
 
 ## 😭 Challenges we ran into
 
-This is our first time interacting with blockchain technology to develop a mobile app. We ran into some difficulties trying to create and send tokens with Solana. We also ran into challenges where we connect front end to backend. Though some of us are familiar with Flask and Swift, we never try to combine them before. Our two backend developers also have two separate backend files that are not really compatible. We were not able to merge them due to the time constraint, but we figured out the solution to run the demo by running two ports at the same time.
+This is our first time interacting with blockchain technology to develop a native mobile app. We ran into some difficulties trying to create and send tokens with Solana. We also ran into challenges where we connect front end to backend. Though some of us are familiar with Flask and Swift, we never try to combine them before. Our two backend developers also have two separate backend files that are not really compatible. We were not able to merge them due to the time constraint, but we figured out the solution to run the demo by running two ports at the same time.
 
 ## 📌 Accomplishment
 
