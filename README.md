@@ -1,5 +1,4 @@
-## Backend for this app
-https://github.com/yenhle/em-backend
+Backend for this app: https://github.com/yenhle/em-backend
 
 # Emnet
 
